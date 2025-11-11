@@ -182,24 +182,27 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
          validSubtitles[index].classList.remove('hide');
          validSubtitles[index].classList.add('show');
-      }, 100);
+      }, 50);
 
       setTimeout(() => {
-         validIcon.classList.add('anim');
          validBody.forEach(body => body.classList.add('anim'));
+
+         setTimeout(() => {
+            validIcon.classList.add('anim');
+         }, 500);
 
          if (index < validSubtitles.length - 1) {
             setTimeout(() => {
                validIcon.classList.remove('anim');
                validBody.forEach(body => body.classList.remove('anim'));
-            }, 1500);
+            }, 1200);
          } else {
             setTimeout(() => {
                currentStep = 4;
                showSection(currentStep);
-            }, 1000);
+            }, 800);
          }
-      }, 5000);
+      }, 2000);
    }
 
    function startValidationAnimation() {
@@ -216,8 +219,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                clearInterval(intervalId);
             }
-         }, 6000);
-      }, 500);
+         }, 3500);
+      }, 300);
    }
 
 
